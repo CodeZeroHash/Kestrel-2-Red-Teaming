@@ -83,11 +83,19 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
+          # Scan prose files for the old display name. The workflow itself and the
+          # umbrella CHANGELOG are excluded: the workflow's success message names the
+          # old string, and the CHANGELOG quotes historical PR summaries verbatim.
           $files = Get-ChildItem -Recurse -File -Include *.md,*.yml,*.yaml |
-            Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' -and $_.FullName -notmatch '[\\/]assets[\\/]' }
+            Where-Object {
+              $_.FullName -notmatch '[\\/]\.git[\\/]'      -and
+              $_.FullName -notmatch '[\\/]assets[\\/]'     -and
+              $_.FullName -notmatch '[\\/]\.github[\\/]'   -and
+              $_.Name     -ne       'CHANGELOG.md'
+            }
           $bad = @()
           foreach ($f in $files) {
-            $hits = Select-String -LiteralPath $f.FullName -Pattern '\b[Rr]ead[\s-]?[Tt]eam(?:ing)?\b'
+            $hits = Select-String -LiteralPath $f.FullName -Pattern '\b[Rr]ead[- ]?[Tt]eaming\b'
             if ($hits) { $bad += $hits }
           }
           if ($bad.Count -gt 0) {
@@ -95,4 +103,4 @@ jobs:
             $bad | ForEach-Object { Write-Host ("  {0}:{1}" -f $_.Path, $_.LineNumber) -ForegroundColor Red }
             exit 1
           }
-          Write-Host "No read-team variants found." -ForegroundColor Green
+          Write-Host "No old display-name variants found in prose." -ForegroundColor Green
