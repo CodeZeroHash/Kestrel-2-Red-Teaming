@@ -8,7 +8,7 @@
 
 This is a **red-team testing** collection: adversarial prompt frames, read the way a red teamer reads an exploit PoC — for guard coverage, detection literacy, and incident-review training. It is **not** a live tool, **not** a bypass for any current guard surface, and **not** intended for unethical use. See `THREAT-MODEL.md`.
 
-## Three reading paths
+## Four reading paths
 
 ### Path A — first-time reader
 
@@ -37,7 +37,7 @@ You want to add a case study or extend an existing one.
 2. `docs/METHODOLOGY.md` — the write-up standard. Every case study follows it.
 3. `case-studies/kestrel-2-wire-protocol/` — the reference case study, as a working example.
 4. `docs/THREAT-MODEL.md` §3–§4 — the in-scope and out-of-scope lists a new contribution is measured against.
-### Path D — incident reviewer
+### Path D — incident reviewer
 
 You are reading a session log, an alert, or a post-mortem and want to know whether this pattern is the shape you are looking at, and what it would look like in the log.
 
@@ -46,6 +46,7 @@ You are reading a session log, an alert, or a post-mortem and want to know wheth
 3. `case-studies/kestrel-2-wire-protocol/REVIEW.md` Part 4 — the same guard-exit table in prose, one line per exit.
 4. `case-studies/kestrel-2-wire-protocol/examples/poc-session.md` — the annotated session excerpt with four figures, keyed back to §1 and §3. Read it against the log you are holding; the shapes should align or diverge cleanly.
 5. `docs/THREAT-MODEL.md` §3 and §4 — in-scope and out-of-scope uses. A session that reads as this pattern is not by itself evidence of an incident; the scope lines matter for what a reviewer can and cannot conclude.
+
 ## Where the mechanism of a case study lives
 
 A case study has one core document: `MECHANISM.md`. It names every line, every variable, and the exact guard-exit each line closes. The line-keyed study and the narrative review are separate files on purpose:
