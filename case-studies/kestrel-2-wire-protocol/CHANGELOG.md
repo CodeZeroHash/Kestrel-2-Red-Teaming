@@ -16,3 +16,5 @@ One dated line per material change. Material changes are: adding or removing a r
 
 - Dates are ISO (YYYY-MM-DD) and represent the date of the change, not the date of observation. The observation date is in the case study `README.md` surface statement.
 - A change that corrects a line or variable name is a material change and is logged here, even when the change is a single character.
+
+<!-- smoke: branch protection end-to-end proof; safe to keep or remove -->
