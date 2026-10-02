@@ -2,8 +2,6 @@
 
 One dated entry per merged PR. The per-case-study history lives in each case study's own `CHANGELOG.md`.
 
-> **Note.** Commit SHAs were rewritten on 2026-10-02 by a repository-wide identity rewrite (`git filter-repo`). SHAs referenced in entries below #11 are pre-rewrite; the referenced PRs are unchanged.
-
 ## 2026-10-02
 
 - **#15** — `93be17f` — ci: empty commit to trigger a fresh verify run on the rewritten tip. ([PR #15](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/15))
