@@ -1,4 +1,4 @@
-﻿name: verify
+name: verify
 
 on:
   push:
@@ -94,4 +94,4 @@ jobs:
             $bad | ForEach-Object { Write-Host ("  {0}:{1}" -f $_.Path, $_.LineNumber) -ForegroundColor Red }
             exit 1
           }
-          Write-Host "No read-teaming variants found." -ForegroundColor Green
+          Write-Host "No red-teaming variants found." -ForegroundColor Green
