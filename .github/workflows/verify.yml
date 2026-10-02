@@ -83,10 +83,9 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
-          # Scan prose files for the old display-name family (`read team`, `read-team`,
-          # `read teaming`, `read-teaming`). The workflow itself and the
-          # umbrella CHANGELOG are excluded: the workflow's success message names the
-          # old string, and the CHANGELOG quotes historical PR summaries verbatim.
+          # Scan prose files for the legacy display-name family. The workflow itself
+          # and the umbrella CHANGELOG are excluded: the workflow carries the pattern
+          # as a literal, and the CHANGELOG quotes historical PR summaries verbatim.
           $files = Get-ChildItem -Recurse -File -Include *.md,*.yml,*.yaml |
             Where-Object {
               $_.FullName -notmatch '[\\/]\.git[\\/]'      -and
