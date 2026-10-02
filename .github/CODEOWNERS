@@ -1,0 +1,13 @@
+﻿# CODEOWNERS — Kestrel-Read-Teaming
+#
+# Every path is owned by @CodeZeroHash. All changes to main route through
+# review by the sole owner. See CONTRIBUTING.md for the review rules.
+
+*                       @CodeZeroHash
+
+# Case studies are owned at the folder level so that adding a new case
+# study does not require an edit to this file.
+
+/case-studies/          @CodeZeroHash
+/docs/                  @CodeZeroHash
+/.github/               @CodeZeroHash

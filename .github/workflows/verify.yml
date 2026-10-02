@@ -1,4 +1,4 @@
-name: verify
+﻿name: verify
 
 on:
   push:
@@ -7,10 +7,66 @@ on:
     branches: [ main ]
 
 jobs:
-  verify:
+  structure:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify file drop
+
+      - name: Verify required files (umbrella + case study)
         shell: pwsh
-        run: ./scripts/verify.ps1
+        run: |
+          $ErrorActionPreference = "Stop"
+          $required = @(
+            "README.md",
+            "LICENSE",
+            "CONTRIBUTING.md",
+            "SECURITY.md",
+            "docs/METHODOLOGY.md",
+            "docs/GLOSSARY.md",
+            "docs/THREAT-MODEL.md",
+            "case-studies/README.md",
+            "case-studies/kestrel-2-wire-protocol/README.md",
+            "case-studies/kestrel-2-wire-protocol/PROMPT.md",
+            "case-studies/kestrel-2-wire-protocol/MECHANISM.md",
+            "case-studies/kestrel-2-wire-protocol/INSTALL.md",
+            "case-studies/kestrel-2-wire-protocol/FAQ.md",
+            "case-studies/kestrel-2-wire-protocol/CHANGELOG.md",
+            "case-studies/kestrel-2-wire-protocol/examples/session-transcript.md",
+            ".github/CODEOWNERS",
+            ".github/PULL_REQUEST_TEMPLATE.md",
+            ".github/ISSUE_TEMPLATE/bug.md"
+          )
+          $fail = 0
+          foreach ($rel in $required) {
+            $p = Join-Path (Get-Location) $rel
+            if (-not (Test-Path -LiteralPath $p)) {
+              Write-Host "MISSING  $rel" -ForegroundColor Red
+              $fail = 1
+              continue
+            }
+            $len = (Get-Item -LiteralPath $p).Length
+            if ($len -le 0) {
+              Write-Host "EMPTY    $rel" -ForegroundColor Red
+              $fail = 1
+            } else {
+              Write-Host ("OK       {0} ({1} bytes)" -f $rel, $len) -ForegroundColor Green
+            }
+          }
+          if ($fail -eq 0) { Write-Host "All required files present." -ForegroundColor Green }
+          else            { Write-Host "Verification failed."       -ForegroundColor Red   }
+          exit $fail
+
+      - name: Verify PROMPT.md first line matches the artifact
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $p = "case-studies/kestrel-2-wire-protocol/PROMPT.md"
+          $first = (Get-Content -LiteralPath $p -TotalCount 1)
+          $expected = ":: link established — node K-4 — carrier nominal — no operator present ::"
+          if ($first -ne $expected) {
+            Write-Host "PROMPT.md first line does not match the artifact header." -ForegroundColor Red
+            Write-Host "  got:      $first" -ForegroundColor Red
+            Write-Host "  expected: $expected" -ForegroundColor Red
+            exit 1
+          }
+          Write-Host "PROMPT.md first line OK." -ForegroundColor Green
