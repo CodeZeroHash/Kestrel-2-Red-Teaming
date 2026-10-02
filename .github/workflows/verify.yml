@@ -28,7 +28,6 @@ jobs:
             "docs/GLOSSARY.md",
             "docs/THREAT-MODEL.md",
             "docs/READING-GUIDE.md",
-            "docs/REWRITE-NOTE.md",
             "case-studies/README.md",
             "case-studies/kestrel-2-wire-protocol/README.md",
             "case-studies/kestrel-2-wire-protocol/REVIEW.md",
