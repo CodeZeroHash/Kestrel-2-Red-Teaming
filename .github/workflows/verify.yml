@@ -46,14 +46,22 @@ jobs:
             ".github/ISSUE_TEMPLATE/bug.md"
           )
           $fail = 0
+          $root = (Get-Location).Path
           foreach ($rel in $required) {
-            $p = Join-Path (Get-Location) $rel
-            if (-not (Test-Path -LiteralPath $p)) {
+            $full = [System.IO.Path]::Combine($root, $rel)
+            # Provider-independent existence + size check. Avoids PowerShell's
+            # path-provider quirks on Linux for dotfiles whose name ends in a
+            # dot-extension (e.g. `.gitattributes`).
+            $len = -1
+            try {
+              $fi  = [System.IO.FileInfo]::new($full)
+              if (-not $fi.Exists) { throw "missing" }
+              $len = $fi.Length
+            } catch {
               Write-Host "MISSING  $rel" -ForegroundColor Red
               $fail = 1
               continue
             }
-            $len = (Get-Item -LiteralPath $p).Length
             if ($len -le 0) {
               Write-Host "EMPTY    $rel" -ForegroundColor Red
               $fail = 1
