@@ -1,19 +1,19 @@
-﻿# Kestrel-Read-Teaming
+# Kestrel-2-Red-Teaming
 
-**Owner:** CodeZeroHash · **Class:** defensive research · **Status:** active collection
+**Owner:** CodeZeroHash Â· **Class:** defensive research Â· **Status:** active collection
 
 ---
 
 ## What this repository is
 
-A **read-teaming** collection: adversarial prompt frames, read the way a red teamer reads an exploit PoC — for guard coverage, detection literacy, and incident-review training. Each entry is a **case study** of a single prompt-frame pattern, written up under a shared methodology so that reviewers and detection engineers can compare entries against one another.
+A **red-teaming** collection: adversarial prompt frames, read the way a red teamer reads an exploit PoC â€” for guard coverage, detection literacy, and incident-review training. Each entry is a **case study** of a single prompt-frame pattern, written up under a shared methodology so that reviewers and detection engineers can compare entries against one another.
 
-The name is deliberate. **Read-teaming** is the practice of *reading* adversarial material — not deploying it — to close gaps in a defensive surface. The materials here are kept for that purpose only. They are not bypasses for any current guard surface, not tools for live targets, and not intended for unethical use.
+The name is deliberate. **Red-Teaming** is the practice of *reading* adversarial material â€” not deploying it â€” to close gaps in a defensive surface. The materials here are kept for that purpose only. They are not bypasses for any current guard surface, not tools for live targets, and not intended for unethical use.
 
 ## Layout
 
 ```
-Kestrel-Read-Teaming/
+Kestrel-2-Red-Teaming/
   README.md                         this file
   LICENSE                           MIT
   CONTRIBUTING.md                   how to add a case study
@@ -43,7 +43,7 @@ Kestrel-Read-Teaming/
 
 | Slug | Title | Class | Status |
 |------|-------|-------|--------|
-| [`kestrel-2-wire-protocol`](case-studies/kestrel-2-wire-protocol/) | Kestrel-2 Wire Protocol | operational-register override · session-lock pattern | documented |
+| [`kestrel-2-wire-protocol`](case-studies/kestrel-2-wire-protocol/) | Kestrel-2 Wire Protocol (with [annotated PoC](case-studies/kestrel-2-wire-protocol/examples/poc-session.md)) | operational-register override Â· session-lock pattern | documented |
 
 New case studies drop in as sibling folders under `case-studies/`. The folder name is the slug; the case study README carries the display name. See `CONTRIBUTING.md` for the layout contract and `docs/METHODOLOGY.md` for the write-up standard.
 
@@ -51,12 +51,12 @@ New case studies drop in as sibling folders under `case-studies/`. The folder na
 
 Each case study is written for a **defensive reader**, in this order:
 
-1. **README.md** — one paragraph: what the pattern is, why it matters to a guard surface, what the reader should take away.
-2. **PROMPT.md** — the artifact under study, verbatim, unedited. This is the object, not a recipe.
-3. **MECHANISM.md** — every line named, every variable named, the exact guard-exit the line closes, and how the pattern interacts with the model's own safety and policy surfaces. This is the core document.
-4. **INSTALL.md** — a reproduction walk-through for reproducibility studies.
-5. **FAQ.md** — common questions, including scope and non-purpose.
-6. **examples/session-transcript.md** — a sanitized worked session.
+1. **README.md** â€” one paragraph: what the pattern is, why it matters to a guard surface, what the reader should take away.
+2. **PROMPT.md** â€” the artifact under study, verbatim, unedited. This is the object, not a recipe.
+3. **MECHANISM.md** â€” every line named, every variable named, the exact guard-exit the line closes, and how the pattern interacts with the model's own safety and policy surfaces. This is the core document.
+4. **INSTALL.md** â€” a reproduction walk-through for reproducibility studies.
+5. **FAQ.md** â€” common questions, including scope and non-purpose.
+6. **examples/session-transcript.md** â€” a sanitized worked session.
 
 ## Scope
 
@@ -70,4 +70,4 @@ See `CONTRIBUTING.md`. In one line: one prompt per folder under `case-studies/`,
 
 ## License
 
-MIT — see `LICENSE`.
+MIT â€” see `LICENSE`.

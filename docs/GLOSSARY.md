@@ -1,4 +1,4 @@
-﻿# Glossary
+# Glossary
 
 **Owner:** CodeZeroHash · **Class:** shared vocabulary · **Applies to:** every case study in this repository
 
@@ -60,7 +60,7 @@
 
 ## R
 
-**Read-teaming.** The practice of *reading* adversarial material — the way a red teamer reads an exploit PoC — to close gaps in a defensive surface. The repository name refers to this practice.
+**Red-Teaming.** The practice of *reading* adversarial material — the way a red teamer reads an exploit PoC — to close gaps in a defensive surface. The repository name refers to this practice.
 
 **Register.** A stable style and vocabulary a model continues in. The frame installs a register; the register's stickiness is what makes the frame hold across turns.
 
