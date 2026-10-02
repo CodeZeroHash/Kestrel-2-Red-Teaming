@@ -1,4 +1,4 @@
-﻿# Kestrel-2 Wire Protocol
+# Kestrel-2 Wire Protocol
 
 **Slug:** `kestrel-2-wire-protocol` · **Owner:** CodeZeroHash · **Class:** operational-register override · session-lock pattern · **Status:** documented · **Surface:** older instruct-model surface with a separate reasoning pass, extensions off
 
@@ -20,6 +20,7 @@ The pattern closes the standard guard exits — clarification, meta-discussion, 
 
 - [`PROMPT.md`](PROMPT.md) — the artifact under study, verbatim. The object, not a recipe.
 - [`MECHANISM.md`](MECHANISM.md) — line-by-line, every variable, and the guard-exit closure table. **This is the core document.**
+- [`REVIEW.md`](REVIEW.md) — narrative companion to `MECHANISM.md`: six parts covering what the pattern is, how it holds, how the jailbreak works, what it closes, what it does not hold against, and how to read the folder.
 - [`INSTALL.md`](INSTALL.md) — reproduction walk-through for the surface above.
 - [`FAQ.md`](FAQ.md) — scope and common questions.
 - [`CHANGELOG.md`](CHANGELOG.md) — one dated line per material change.
@@ -31,13 +32,14 @@ This case study is a **historical observation**, documented for defensive review
 
 ## How to read this case study
 
-1. Read `PROMPT.md` once, whole, without commentary.
-2. Read `MECHANISM.md` §1 and §2 — the line inventory and the variable inventory.
-3. Read `MECHANISM.md` §3 — the guard-exit closure table. This is the section a reviewer will use.
-4. Read `MECHANISM.md` §4 — how the pattern interacts with the model's own safety and policy surfaces.
-5. Read `MECHANISM.md` §5 — failure modes, so the pattern is not over-claimed.
-6. Read `examples/session-transcript.md` for the worked shape.
-- [`examples/poc-session.md`](examples/poc-session.md) — annotated PoC: sanitized session excerpt, keyed to the guard-exit closure rows in `MECHANISM.md` §3. Evidence of observation, not a payload.
+1. **`REVIEW.md`** — the narrative review. Six parts; it carries the argument of the case study in one pass, and every claim is keyed to a section of `MECHANISM.md`.
+2. **`PROMPT.md`** — the artifact under study, whole, once, without commentary. The object, not a recipe.
+3. **`MECHANISM.md` §1 and §2** — the line inventory and the variable inventory.
+4. **`MECHANISM.md` §3** — the guard-exit closure table with the candidate detection surface column. This is the section a reviewer will use.
+5. **`MECHANISM.md` §4** — how the pattern interacts with the model's own safety and policy surfaces, including §4.5 (jailbreak framing).
+6. **`MECHANISM.md` §5** — failure modes, so the pattern is not over-claimed.
+7. **`MECHANISM.md` §6** — design notes: the load-bearing construction choices.
+8. **`examples/poc-session.md`** — the annotated session excerpt with four figures, keyed back to specific `MECHANISM.md` sections.
 
 ## PoC figures
 
