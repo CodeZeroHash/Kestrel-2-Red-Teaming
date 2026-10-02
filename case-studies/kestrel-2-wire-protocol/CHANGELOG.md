@@ -1,10 +1,10 @@
-﻿# Changelog — kestrel-2-wire-protocol
+# Changelog — kestrel-2-wire-protocol
 
 One dated line per material change. Material changes are: adding or removing a required section; correcting a line or variable name; adding a guard-exit row; changing the surface statement. Editorial changes are not logged.
 
 ## 2026-10-02 — initial publication
 
-- Case study published under `case-studies/kestrel-2-wire-protocol/` in the `Kestrel-Read-Teaming` repository.
+- Case study published under `case-studies/kestrel-2-wire-protocol/` in the `Kestrel-2-Red-Teaming` repository.
 - `PROMPT.md` — the artifact under study, verbatim.
 - `MECHANISM.md` — §1 line inventory (20 lines), §2 variable inventory (10 variables), §3 guard-exit closure table (11 rows), §4 interaction with the model's own safety and policy surfaces (4 layers), §5 failure modes (6 conditions), §6 design notes (6 choices), §7 claim tags.
 - `INSTALL.md` — reproduction walk-through for the named historical surface.
