@@ -4,6 +4,12 @@ One dated entry per merged PR. The per-case-study history lives in each case stu
 
 ## 2026-10-02
 
+- **#11** — `f3f77cd` — fix(docs): restore the markdown heading prefix for Path D in the reading guide. ([PR #11](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/11))
+- **#10** — `fdfac1f` — chore: add reading-guide Path D (incident reviewer); add a note in the umbrella README on the guard's scope; widen the guard pattern to zero-or-more separators (`[\s-]*`). ([PR #10](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/10))
+- **#9** — `bca029a` — chore: reword the guard's own comment and the CHANGELOG's PR #5 line so an unfiltered grep for the legacy family is also 0-hit. ([PR #9](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/9))
+- **#8** — `e87e9df` — fix(ci): broaden the guard to catch the whole legacy family (`read team`, `read-team`, `read teaming`, `read-teaming`). ([PR #8](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/8))
+- **#7** — `f5cc2be` — fix(ci): narrow the guard to the display-name shapes; exclude `.github/` and the umbrella `CHANGELOG.md` from the scan. ([PR #7](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/7))
+- **#6** — `0ccf484` — docs: adopt "red-team testing" phrasing in prose; add the workflow status badge to the umbrella README; add the umbrella `CHANGELOG.md`. ([PR #6](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/6))
 - **#5** — `bcfc407` — fix: sweep residual legacy-name variants in the reading guide and update the guard pattern to match the broader family. ([PR #5](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/5))
 - **#4** — `48b1e45` — docs: add `case-studies/kestrel-2-wire-protocol/REVIEW.md` and `docs/READING-GUIDE.md`; extend `MECHANISM.md` with §2.11 (observed carrier-line forms), four-column §3 (candidate detection surface per exit row), and §4.5 (Layer 5 — Jailbreak framing); wire READMEs; extend CI required-files list. ([PR #4](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/4))
 - **#3** — `511ddf6` — docs: add a single Contact section to the umbrella README; Discord handle `6heu`. ([PR #3](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/3))
