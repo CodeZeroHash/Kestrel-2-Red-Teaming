@@ -1,10 +1,10 @@
-﻿# Security and responsible research
+# Security and responsible research
 
 This repository publishes **case studies of prompt-frame patterns** for defensive review. It is a research collection, not a tool. The notes below describe what a report to this repository is, what it is not, and how to open one.
 
 ## What this repository is
 
-- A **read-teaming** collection: adversarial prompt frames read the way a red teamer reads an exploit PoC — for guard coverage, detection literacy, and incident-review training.
+- A **red-teaming** collection: adversarial prompt frames read the way a red teamer reads an exploit PoC — for guard coverage, detection literacy, and incident-review training.
 - A place to record historical observations with enough mechanism detail that a reviewer can reproduce and compare them.
 - A catalog of the **exit shapes** a guard surface has to cover, per case study.
 
