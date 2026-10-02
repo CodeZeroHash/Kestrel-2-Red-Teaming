@@ -78,6 +78,9 @@ See `CONTRIBUTING.md`. In one line: one prompt per folder under `case-studies/`,
 
 MIT â€” see `LICENSE`.
 
+## Repository guard
+
+A CI step scans `.md`, `.yml`, and `.yaml` files for the legacy display-name family (all separator and no-separator variants). It **excludes** `.git/`, `examples/**/assets/`, `.github/`, and `CHANGELOG.md`. The exclusions keep the workflow from matching its own pattern string and let the CHANGELOG quote historical PR summaries verbatim. The workflow definition is the reference; the check is one `Select-String` over the same file set.
 ## Contact
 
 Discord: `6heu`.
