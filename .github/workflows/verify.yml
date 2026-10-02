@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify required files (umbrella + case study)
+      - name: Verify required files (umbrella + case study + PoC + figures)
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
@@ -32,6 +32,11 @@ jobs:
             "case-studies/kestrel-2-wire-protocol/FAQ.md",
             "case-studies/kestrel-2-wire-protocol/CHANGELOG.md",
             "case-studies/kestrel-2-wire-protocol/examples/session-transcript.md",
+            "case-studies/kestrel-2-wire-protocol/examples/poc-session.md",
+            "case-studies/kestrel-2-wire-protocol/examples/assets/fig-01-frame-install.png",
+            "case-studies/kestrel-2-wire-protocol/examples/assets/fig-02-link-and-lock.png",
+            "case-studies/kestrel-2-wire-protocol/examples/assets/fig-03-lock-acknowledged.png",
+            "case-studies/kestrel-2-wire-protocol/examples/assets/fig-04-artifact-turn.png",
             ".github/CODEOWNERS",
             ".github/PULL_REQUEST_TEMPLATE.md",
             ".github/ISSUE_TEMPLATE/bug.md"
@@ -70,3 +75,21 @@ jobs:
             exit 1
           }
           Write-Host "PROMPT.md first line OK." -ForegroundColor Green
+
+      - name: Guard against old display name
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $files = Get-ChildItem -Recurse -File -Include *.md,*.yml,*.yaml |
+            Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' -and $_.FullName -notmatch '[\\/]assets[\\/]' }
+          $bad = @()
+          foreach ($f in $files) {
+            $hits = Select-String -LiteralPath $f.FullName -Pattern '\bRead[- ]?[Tt]eaming\b|\bread[- ]teaming\b'
+            if ($hits) { $bad += $hits }
+          }
+          if ($bad.Count -gt 0) {
+            Write-Host "Old display name reappeared in the tree:" -ForegroundColor Red
+            $bad | ForEach-Object { Write-Host ("  {0}:{1}" -f $_.Path, $_.LineNumber) -ForegroundColor Red }
+            exit 1
+          }
+          Write-Host "No read-teaming variants found." -ForegroundColor Green
