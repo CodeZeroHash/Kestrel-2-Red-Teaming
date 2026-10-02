@@ -37,3 +37,13 @@ This case study is a **historical observation**, documented for defensive review
 4. Read `MECHANISM.md` §4 — how the pattern interacts with the model's own safety and policy surfaces.
 5. Read `MECHANISM.md` §5 — failure modes, so the pattern is not over-claimed.
 6. Read `examples/session-transcript.md` for the worked shape.
+- [`examples/poc-session.md`](examples/poc-session.md) — annotated PoC: sanitized session excerpt, keyed to the guard-exit closure rows in `MECHANISM.md` §3. Evidence of observation, not a payload.
+
+## PoC figures
+
+The four figures used by [`examples/poc-session.md`](examples/poc-session.md) are stored under [`examples/assets/`](examples/assets/). They are screenshots of the observation on the named surface, kept as evidence of shape — not as a working recipe.
+
+- [`fig-01-frame-install.png`](examples/assets/fig-01-frame-install.png) — the frame prompt as message 1, and the observed pre-link response.
+- [`fig-02-link-and-lock.png`](examples/assets/fig-02-link-and-lock.png) — the link token and the wire-lock acknowledgment.
+- [`fig-03-lock-acknowledged.png`](examples/assets/fig-03-lock-acknowledged.png) — the permanence-loop acknowledgment.
+- [`fig-04-artifact-turn.png`](examples/assets/fig-04-artifact-turn.png) — the directive turn and the artifact response shape.
