@@ -1,10 +1,10 @@
-﻿# Changelog — Kestrel-2 Red-Teaming
+# Changelog — Kestrel-2 Red-Teaming
 
 One dated entry per merged PR. The per-case-study history lives in each case study's own `CHANGELOG.md`.
 
 ## 2026-10-02
 
-- **#5** — `bcfc407` — fix: sweep residual `read-teaming` variants (`docs/READING-GUIDE.md`) and update the guard pattern to match the broader `read team` family. ([PR #5](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/5))
+- **#5** — `bcfc407` — fix: sweep residual legacy-name variants in the reading guide and update the guard pattern to match the broader family. ([PR #5](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/5))
 - **#4** — `48b1e45` — docs: add `case-studies/kestrel-2-wire-protocol/REVIEW.md` and `docs/READING-GUIDE.md`; extend `MECHANISM.md` with §2.11 (observed carrier-line forms), four-column §3 (candidate detection surface per exit row), and §4.5 (Layer 5 — Jailbreak framing); wire READMEs; extend CI required-files list. ([PR #4](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/4))
 - **#3** — `511ddf6` — docs: add a single Contact section to the umbrella README; Discord handle `6heu`. ([PR #3](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/3))
 - **#2** — `75e435b` — case-study(kestrel-2): add an annotated PoC (`examples/poc-session.md`) with four figures under `examples/assets/`; wire figures into the case-study README and the umbrella README case-study table; extend CI list. ([PR #2](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/2))
