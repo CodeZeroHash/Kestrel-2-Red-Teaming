@@ -19,6 +19,7 @@ jobs:
           $required = @(
             "README.md",
             "LICENSE",
+            ".gitattributes",
             "CHANGELOG.md",
             "CONTRIBUTING.md",
             "SECURITY.md",
