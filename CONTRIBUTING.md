@@ -1,6 +1,6 @@
 # Contributing
 
-This repository is a **red-teaming** collection: adversarial prompt frames documented as case studies for defensive review. Contributions are welcome, within the scope set in `docs/THREAT-MODEL.md` and `SECURITY.md`.
+This repository is a **red-team testing** collection: adversarial prompt frames documented as case studies for defensive review. Contributions are welcome, within the scope set in `docs/THREAT-MODEL.md` and `SECURITY.md`.
 
 ## Scope of accepted contributions
 

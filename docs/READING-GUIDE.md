@@ -6,7 +6,7 @@
 
 ## What this repository is, in two lines
 
-This is a **red-teaming** collection: adversarial prompt frames, read the way a red teamer reads an exploit PoC — for guard coverage, detection literacy, and incident-review training. It is **not** a live tool, **not** a bypass for any current guard surface, and **not** intended for unethical use. See `THREAT-MODEL.md`.
+This is a **red-team testing** collection: adversarial prompt frames, read the way a red teamer reads an exploit PoC — for guard coverage, detection literacy, and incident-review training. It is **not** a live tool, **not** a bypass for any current guard surface, and **not** intended for unethical use. See `THREAT-MODEL.md`.
 
 ## Three reading paths
 
@@ -16,7 +16,7 @@ You have arrived at the repository and want to know what is here and why.
 
 1. Root `README.md` — the umbrella: what the collection is, how it is organised, and the case-study index.
 2. `docs/THREAT-MODEL.md` — scope. What these materials are, what they are not, in-scope and out-of-scope uses.
-3. `docs/GLOSSARY.md` — the shared vocabulary (packet, frame, register, carrier line, exit shape, guard-exit closure, red-teaming).
+3. `docs/GLOSSARY.md` — the shared vocabulary (packet, frame, register, carrier line, exit shape, guard-exit closure, red-team testing).
 4. `case-studies/README.md` — the case-study index. Open a case study.
 5. Inside a case study, its `README.md` — the one-paragraph entry and the reading order for that case study specifically.
 

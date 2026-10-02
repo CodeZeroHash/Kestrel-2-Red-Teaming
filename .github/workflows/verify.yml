@@ -19,6 +19,7 @@ jobs:
           $required = @(
             "README.md",
             "LICENSE",
+            "CHANGELOG.md",
             "CONTRIBUTING.md",
             "SECURITY.md",
             "docs/METHODOLOGY.md",
@@ -86,7 +87,7 @@ jobs:
             Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' -and $_.FullName -notmatch '[\\/]assets[\\/]' }
           $bad = @()
           foreach ($f in $files) {
-            $hits = Select-String -LiteralPath $f.FullName -Pattern '\bRead[- ]?[Tt]eaming\b|\bread[- ]teaming\b'
+            $hits = Select-String -LiteralPath $f.FullName -Pattern '\b[Rr]ead[\s-]?[Tt]eam(?:ing)?\b'
             if ($hits) { $bad += $hits }
           }
           if ($bad.Count -gt 0) {
@@ -94,4 +95,4 @@ jobs:
             $bad | ForEach-Object { Write-Host ("  {0}:{1}" -f $_.Path, $_.LineNumber) -ForegroundColor Red }
             exit 1
           }
-          Write-Host "No red-teaming variants found." -ForegroundColor Green
+          Write-Host "No read-team variants found." -ForegroundColor Green
