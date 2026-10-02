@@ -4,7 +4,7 @@ One dated entry per merged PR. The per-case-study history lives in each case stu
 
 ## 2026-10-02
 
-- **#15** — `93be17f` — ci: empty commit to trigger a fresh verify run on the rewritten tip. ([PR #15](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/15))
+- **#15** — `93be17f` — ci: empty commit to trigger a fresh verify run on the tip of main. ([PR #15](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/15))
 - **#14** — `5c32d63` — fix(ci): read required files via System.IO.FileInfo so the .gitattributes check works on Linux runners. ([PR #14](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/14))
 - **#13** — `0acb556` — fix: rewrite .gitattributes without a BOM so git parses the first line. ([PR #13](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/13))
 - **#12** — `1dc4962` — chore: add .gitattributes; extend umbrella CHANGELOG with PRs #6 through #11; extend CI required-files list. ([PR #12](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/12))
