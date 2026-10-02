@@ -1,0 +1,18 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# PowerShell
+*.log
+*.tmp
+
+# Local secrets
+.env
+*.local
+
+# Build
+bin/
+obj/
