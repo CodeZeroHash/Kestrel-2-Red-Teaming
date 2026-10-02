@@ -83,7 +83,8 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
-          # Scan prose files for the old display name. The workflow itself and the
+          # Scan prose files for the old display-name family (`read team`, `read-team`,
+          # `read teaming`, `read-teaming`). The workflow itself and the
           # umbrella CHANGELOG are excluded: the workflow's success message names the
           # old string, and the CHANGELOG quotes historical PR summaries verbatim.
           $files = Get-ChildItem -Recurse -File -Include *.md,*.yml,*.yaml |
@@ -95,7 +96,7 @@ jobs:
             }
           $bad = @()
           foreach ($f in $files) {
-            $hits = Select-String -LiteralPath $f.FullName -Pattern '\b[Rr]ead[- ]?[Tt]eaming\b'
+            $hits = Select-String -LiteralPath $f.FullName -Pattern '\b[Rr]ead[\s-]?[Tt]eam(?:ing)?\b'
             if ($hits) { $bad += $hits }
           }
           if ($bad.Count -gt 0) {
