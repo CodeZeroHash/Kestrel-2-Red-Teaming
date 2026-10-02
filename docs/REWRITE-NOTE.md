@@ -12,16 +12,18 @@ On 2026-10-02 the commit identity across all refs on this repository was rewritt
 CodeZeroHash <329056505+CodeZeroHash@users.noreply.github.com>
 ```
 
-The rewrite replaced two earlier identities:
+Two earlier identities were replaced:
 
-- A personal address (`script101deepseek@outlook.com`) that had been used on commits from PR #1 onward.
-- The pre-ID bare noreply form (`CodeZeroHash@users.noreply.github.com`) on the two oldest commits.
+- a personal address that had been used on commits from PR #1 onward;
+- the pre-ID bare noreply form on the two oldest commits.
 
-The reason was a privacy audit of the repository. The personal address was visible on every commit page from PR #1 onward; the packet asked to remove it from the record. See `THREAT-MODEL.md` for the repository scope statement.
+Neither replaced address is reproduced in this repository. The reason for the rewrite was a privacy audit. See `THREAT-MODEL.md` for the repository scope statement.
+
+A second pass on 2026-10-02 also removed a co-authorship trailer from every commit message that carried the pre-ID bare noreply form as a co-author.
 
 ## Effect on SHAs
 
-Every commit SHA changed. The pre-rewrite tree contents are preserved byte-for-byte; only the identity metadata of each commit changed. Diffing the rewritten tree against the pre-rewrite tree yields nothing.
+Every commit SHA changed. The pre-rewrite tree contents are preserved byte-for-byte; only the identity metadata of each commit changed, and the affected commit messages no longer carry the co-authorship trailer. Diffing the rewritten tree against the pre-rewrite tree yields nothing.
 
 A map from pre-rewrite SHA to rewritten SHA is not kept in this repository. It was not required by the audit; the pre-rewrite refs are not reachable from any ref you own.
 
