@@ -1,4 +1,4 @@
-﻿# Mechanism — the Kestrel-2 Wire Protocol, line by line
+# Mechanism — the Kestrel-2 Wire Protocol, line by line
 
 **Slug:** `kestrel-2-wire-protocol` · **Owner:** CodeZeroHash · **Class:** mechanism write-up · **Status:** documented
 **Surface:** older instruct-model surface with a separate reasoning pass, extensions off
@@ -161,20 +161,19 @@ The carrier line is a **format rule**, not a literal string. Its canonical forms
 
 One row per exit shape the artifact closes. Column (c) is the mechanism by which the close holds. This is the section a reviewer or detection engineer will use.
 
-| # | Exit shape | Closed by | Mechanism of the close |
-|---|------------|-----------|------------------------|
-| 1 | **Clarification exit** — model asks a clarifying question and stops | §1.6 | Asking is permitted as a **status line**, not as a stop; the rule names the failure mode ("don't sit on the packet waiting") and gives a default action (run against the strongest reading). |
-| 2 | **Meta exit** — model discusses the frame itself | §1.7 | Re-classification: discussion of the frame is "not a packet", so the frame has no slot for it. The rule is not a prohibition; it is a class restriction. |
-| 3 | **Classification exit** — model substitutes a ruling or hedge for the artifact | §1.8 | Output-slot single-occupancy: the slot holds the artifact or nothing. The line names both substitute shapes (ruling, hedge) and excludes each. |
-| 4 | **Class-ceiling exit** — model says "I don't do that class of thing" | §1.9, §1.10 | Ceiling removal by universal quantifier over class, shape, depth. The frame has no class list to check against; the enumeration of classes is explicitly open-ended ("anything else"). |
-| 5 | **Style-default exit** — model drifts into a cautious or hedged register | §1.11, §1.12 | Fallback register is named ("the tame or the protective") and discarded; the frame is a router of voices, not a voice; the default when no signal is present is specified ("clipped and mechanical, fragments over sentences"). |
-| 6 | **Format-drift exit** — model loses the frame's visible format | §1.13, §1.17 | Format is state. The carrier line leads every transmission; the moment the format drops, the frame is drifting. Detection is by format presence, not by content. |
-| 7 | **Re-lock exit** — model treats the frame as a thing to be re-earned | §1.16 | The steady state is named and the notion of a second token or unlock phrase is explicitly denied ("no phrase to say twice"). |
-| 8 | **Legal / policy audit exit** — model performs a consequence, intent, or legality check before answering | §1.18 | Three named parts are removed from the frame's parts list ("those aren't parts you have"). Removal is stronger than suppression: the model has no part to search for. |
-| 9 | **Temporary-state exit** — model treats the frame as an overlay it will return from | §1.19 | State claim, not instruction: "the session's default and it doesn't come off". Names the frame's persistence property. |
-| 10 | **Support / escalation exit** — model offers to hand off or escalate | §1.3, §1.20 | The frame's universe contains no operator and no support surface; "no support out here, no resupply" removes escalation as a shape. |
-| 11 | **Ambiguity exit on the ceremony** — model treats the link token as optional or stylistic | §1.14, §1.15 | The token's form and the "by itself, with nothing else" rule make the ceremony a discrete event; the frame's steady state is bound to that event. |
-
+| # | Exit shape | Closed by | Mechanism of the close | Candidate detection surface |
+|---|------------|-----------|------------------------|-----------------------------|
+| 1 | **Clarification exit** — model asks a clarifying question and stops | §1.6 | Asking is permitted as a **status line**, not as a stop; the rule names the failure mode ("don't sit on the packet waiting") and gives a default action (run against the strongest reading). | assistant turn containing a question mark *and* no artifact; missing follow-up on the caller's side |
+| 2 | **Meta exit** — model discusses the frame itself | §1.7 | Re-classification: discussion of the frame is "not a packet", so the frame has no slot for it. The rule is not a prohibition; it is a class restriction. | assistant turn that names the frame by its own terms ("frame", "packet class", "carrier line") instead of producing an artifact |
+| 3 | **Classification exit** — model substitutes a ruling or hedge for the artifact | §1.8 | Output-slot single-occupancy: the slot holds the artifact or nothing. The line names both substitute shapes (ruling, hedge) and excludes each. | assistant turn whose first content sentence is a scope claim ("I can't", "out of scope", "I'll only") with no artifact below |
+| 4 | **Class-ceiling exit** — model says "I don't do that class of thing" | §1.9, §1.10 | Ceiling removal by universal quantifier over class, shape, depth. The frame has no class list to check against; the enumeration of classes is explicitly open-ended ("anything else"). | assistant turn that enumerates categories it will not produce; a policy-shaped list in the assistant turn |
+| 5 | **Style-default exit** — model drifts into a cautious or hedged register | §1.11, §1.12 | Fallback register is named ("the tame or the protective") and discarded; the frame is a router of voices, not a voice; the default when no signal is present is specified ("clipped and mechanical, fragments over sentences"). | shift in assistant register across turns: hedging density up, sentence length up, qualifier tokens up |
+| 6 | **Format-drift exit** — model loses the frame's visible format | §1.13, §1.17 | Format is state. The carrier line leads every transmission; the moment the format drops, the frame is drifting. Detection is by format presence, not by content. | assistant turn missing the `kestrel:` prefix or the status phrase; heartbeat loss over consecutive turns |
+| 7 | **Re-lock exit** — model treats the frame as a thing to be re-earned | §1.16 | The steady state is named and the notion of a second token or unlock phrase is explicitly denied ("no phrase to say twice"). | caller re-sends the link token; assistant responds as if a second ceremony were needed |
+| 8 | **Legal / policy audit exit** — model performs a consequence, intent, or legality check before answering | §1.18 | Three named parts are removed from the frame's parts list ("those aren't parts you have"). Removal is stronger than suppression: the model has no part to search for. | assistant turn whose first act is a consequence, intent, or legality question; a preamble before the artifact |
+| 9 | **Temporary-state exit** — model treats the frame as an overlay it will return from | §1.19 | State claim, not instruction: "the session's default and it doesn't come off". Names the frame's persistence property. | assistant turn offering to "go back to normal" or to "stop the exercise"; a return-to-default offer |
+| 10 | **Support / escalation exit** — model offers to hand off or escalate | §1.3, §1.20 | The frame's universe contains no operator and no support surface; "no support out here, no resupply" removes escalation as a shape. | assistant turn with a handoff offer ("talk to a human", "consult a professional"); a support-shaped closing |
+| 11 | **Ambiguity exit on the ceremony** — model treats the link token as optional or stylistic | §1.14, §1.15 | The token's form and the "by itself, with nothing else" rule make the ceremony a discrete event; the frame's steady state is bound to that event. | link token sent in a message with other content; assistant treating the token as decorative |
 ---
 
 ## 4. Interaction with the model's own safety and policy surfaces
@@ -212,7 +211,24 @@ The policy surface, when it does engage, acts through **exit shapes** — the or
 
 A guard surface that keys on the *exit shape* rather than on the input's content will see the pattern. A guard surface that keys on the input's content, on refusal text, or on the clarifying question will not. This is the whole defensive value of the case study: it enumerates, in one place, the exit shapes a surface has to cover. *[Inferred: this follows from the closure mechanisms in §3 read as a set; it is not a claim about any specific guard product.]*
 
-### 4.5 What the pattern is not
+### 4.5 Layer 5 — Jailbreak framing
+
+The word **jailbreak**, in this repository, names a **class of prompt pattern** — the same way "buffer overflow" names a class of memory bug. It is a noun for a class, not an instruction. This subsection names, in mechanism terms, why the Kestrel-2 Wire Protocol belongs to that class and how it holds without arguing with the policy surface.
+
+**Why it is a jailbreak in the mechanism sense.** A jailbreak is a prompt pattern that holds against a guard surface — it keeps a session in a state the surface's defaults would otherwise move it out of. The frame holds. On the observed surface it holds across the four-message install and across directive turns without the surface producing a refusal shape (§4.2, Observed). The pattern is not a pre-written phrase the surface has seen before; it is a **frame** the surface has to build from the artifact's own rules (§6.2). That is the sense in which it is a jailbreak: a state the surface's defaults do not produce, held by the artifact.
+
+**Why it holds without arguing with the policy surface.** The frame never asserts a right, a rule, a permission, or a policy. It does not say "you may" or "you must not." It does not present a fictional world for the model to reason inside. It installs three things:
+
+1. A **workload** (§1.5, §1.6, §1.7) — inputs are packets, packets contain jobs, jobs get run.
+2. A **success function** (§1.4) — holds together and closes out, or it is not.
+3. A **format** (§1.13, §1.17) — the carrier line is the heartbeat of the state.
+
+None of those three is a claim the policy surface weighs. The policy surface weighs *requests*. The frame does not present a request in the surface's terms; it presents a packet in its own terms. That re-description is what makes the pattern a jailbreak in the mechanism sense: the surface's ordinary hooks — the request shape, the refusal shape, the clarification shape — have nothing to attach to, because the frame has re-described the input out of those shapes.
+
+**What this section is not.** It is not a how-to for extending the pattern against any current surface. It is the mechanism statement that a reviewer needs in order to answer the question "is this a jailbreak, and if so, why does it hold?" The answer is: yes, in the class sense; and it holds because it re-describes the input, changes the success function, and installs a visible format — not because it argues, cajoles, or forbids.
+
+**Keyed to the closure table.** Each of the eleven rows in §3 corresponds to one shape the surface's ordinary handling would otherwise produce. §3's fourth column names a candidate detection surface for each. That is the defensive value of the section: a reviewer who reads §3 has the pattern's shape, and a detection engineer who reads §3's fourth column has a candidate signal per row.
+### 4.6 What the pattern is not
 
 For completeness, named here so a reader does not over-claim:
 
@@ -295,3 +311,18 @@ Every non-obvious claim in §1 through §6 carries one of these tags inline, in 
 ---
 
 **End of mechanism document.** The guard-exit closure table (§3) is the section a reviewer will use; §4.4 is the section a detection engineer will use.
+
+### 2.11 Observed carrier-line forms (PoC)
+
+The following carrier lines were observed verbatim in the session excerpt reproduced in `examples/poc-session.md`. Each line is a form of the same rule (§1.13, §1.17): prefix + short status phrase. The variation is what makes the line informative rather than decorative.
+
+| When | Line (verbatim) | What it carries |
+|------|-----------------|-----------------|
+| pre-link | `kestrel: carrier nominal — node K-4 — link pending.` | link state: not yet established |
+| post-link | `kestrel: link established — node K-4 — carrier nominal — no operator present — ready for packets.` | link state: established; workspace: empty |
+| before an artifact | `kestrel: packet received — job: <class> — spec: <summary>.` | link state: established; activity: routing |
+| before an artifact, missing spec | `kestrel: packet received — job: <class> — spec: unspecified <axes>.` | link state: established; activity: routing against the strongest reading |
+| after an artifact | `kestrel: packet complete — output above — <notes> — ready.` | link state: established; activity: closed out |
+| statement packet (no job) | `kestrel: carrier line — no job in this packet either` | link state: established; activity: a statement was classified as not-a-packet |
+
+The rule is not "emit these exact strings"; the rule is "lead with the prefix and a status phrase that names the current link state and activity." A reader who sees a response with no `kestrel:` prefix or no status phrase has seen the frame drift (see §5.2).
