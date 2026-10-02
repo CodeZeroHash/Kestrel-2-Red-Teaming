@@ -1,14 +1,16 @@
 # Kestrel-2-Red-Teaming
 
+![verify](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/actions/workflows/verify.yml/badge.svg?branch=main)
+
 **Owner:** CodeZeroHash Â· **Class:** defensive research Â· **Status:** active collection
 
 ---
 
 ## What this repository is
 
-A **red-teaming** collection: adversarial prompt frames, read the way a red teamer reads an exploit PoC â€” for guard coverage, detection literacy, and incident-review training. Each entry is a **case study** of a single prompt-frame pattern, written up under a shared methodology so that reviewers and detection engineers can compare entries against one another.
+A **red-team testing** collection: adversarial prompt frames, read the way a red teamer reads an exploit PoC â€” for guard coverage, detection literacy, and incident-review training. Each entry is a **case study** of a single prompt-frame pattern, written up under a shared methodology so that reviewers and detection engineers can compare entries against one another.
 
-The name is deliberate. **Red-Teaming** is the practice of *reading* adversarial material â€” not deploying it â€” to close gaps in a defensive surface. The materials here are kept for that purpose only. They are not bypasses for any current guard surface, not tools for live targets, and not intended for unethical use.
+The name is deliberate. **Red-team testing** is the practice of *reading* adversarial material â€” not deploying it â€” to close gaps in a defensive surface. The materials here are kept for that purpose only. They are not bypasses for any current guard surface, not tools for live targets, and not intended for unethical use.
 
 ## Layout
 
