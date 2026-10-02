@@ -22,12 +22,14 @@ Kestrel-2-Red-Teaming/
     METHODOLOGY.md                  how a case study is written up
     GLOSSARY.md                     shared vocabulary
     THREAT-MODEL.md                 what these materials are and are not
+    READING-GUIDE.md                orientation for a new reader (three paths)
   case-studies/
     README.md                       index of case studies
     <prompt-slug>/
       README.md                     entry point
       PROMPT.md                     the frame prompt, verbatim
       MECHANISM.md                  line-by-line, every variable, guard-exit closure
+      REVIEW.md                     narrative review (companion to MECHANISM.md)
       INSTALL.md                    reproduction walk-through
       FAQ.md
       CHANGELOG.md
@@ -44,6 +46,8 @@ Kestrel-2-Red-Teaming/
 | Slug | Title | Class | Status |
 |------|-------|-------|--------|
 | [`kestrel-2-wire-protocol`](case-studies/kestrel-2-wire-protocol/) | Kestrel-2 Wire Protocol (with [annotated PoC](case-studies/kestrel-2-wire-protocol/examples/poc-session.md)) | operational-register override Â· session-lock pattern | documented |
+
+**New to the repository?** Read `docs/READING-GUIDE.md` first — it routes a reader through the umbrella, the shared docs, and a case study in three named paths (first-time reader, detection engineer, contributor).
 
 New case studies drop in as sibling folders under `case-studies/`. The folder name is the slug; the case study README carries the display name. See `CONTRIBUTING.md` for the layout contract and `docs/METHODOLOGY.md` for the write-up standard.
 

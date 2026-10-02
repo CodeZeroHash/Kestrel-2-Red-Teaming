@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify required files (umbrella + case study + PoC + figures)
+      - name: Verify required files (umbrella + docs + case study + PoC + figures)
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
@@ -24,8 +24,10 @@ jobs:
             "docs/METHODOLOGY.md",
             "docs/GLOSSARY.md",
             "docs/THREAT-MODEL.md",
+            "docs/READING-GUIDE.md",
             "case-studies/README.md",
             "case-studies/kestrel-2-wire-protocol/README.md",
+            "case-studies/kestrel-2-wire-protocol/REVIEW.md",
             "case-studies/kestrel-2-wire-protocol/PROMPT.md",
             "case-studies/kestrel-2-wire-protocol/MECHANISM.md",
             "case-studies/kestrel-2-wire-protocol/INSTALL.md",
