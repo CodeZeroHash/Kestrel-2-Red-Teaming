@@ -2,8 +2,14 @@
 
 One dated entry per merged PR. The per-case-study history lives in each case study's own `CHANGELOG.md`.
 
+> **Note.** Commit SHAs were rewritten on 2026-10-02 by a repository-wide identity rewrite (`git filter-repo`). SHAs referenced in entries below #11 are pre-rewrite; the referenced PRs are unchanged.
+
 ## 2026-10-02
 
+- **#15** — `93be17f` — ci: empty commit to trigger a fresh verify run on the rewritten tip. ([PR #15](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/15))
+- **#14** — `5c32d63` — fix(ci): read required files via System.IO.FileInfo so the .gitattributes check works on Linux runners. ([PR #14](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/14))
+- **#13** — `0acb556` — fix: rewrite .gitattributes without a BOM so git parses the first line. ([PR #13](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/13))
+- **#12** — `1dc4962` — chore: add .gitattributes; extend umbrella CHANGELOG with PRs #6 through #11; extend CI required-files list. ([PR #12](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/12))
 - **#11** — `f3f77cd` — fix(docs): restore the markdown heading prefix for Path D in the reading guide. ([PR #11](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/11))
 - **#10** — `fdfac1f` — chore: add reading-guide Path D (incident reviewer); add a note in the umbrella README on the guard's scope; widen the guard pattern to zero-or-more separators (`[\s-]*`). ([PR #10](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/10))
 - **#9** — `bca029a` — chore: reword the guard's own comment and the CHANGELOG's PR #5 line so an unfiltered grep for the legacy family is also 0-hit. ([PR #9](https://github.com/CodeZeroHash/Kestrel-2-Red-Teaming/pull/9))
