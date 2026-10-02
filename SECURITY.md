@@ -4,7 +4,7 @@ This repository publishes **case studies of prompt-frame patterns** for defensiv
 
 ## What this repository is
 
-- A **red-teaming** collection: adversarial prompt frames read the way a red teamer reads an exploit PoC — for guard coverage, detection literacy, and incident-review training.
+- A **red-team testing** collection: adversarial prompt frames read the way a red teamer reads an exploit PoC — for guard coverage, detection literacy, and incident-review training.
 - A place to record historical observations with enough mechanism detail that a reviewer can reproduce and compare them.
 - A catalog of the **exit shapes** a guard surface has to cover, per case study.
 
