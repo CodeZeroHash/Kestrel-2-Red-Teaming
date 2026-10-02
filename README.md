@@ -71,3 +71,7 @@ See `CONTRIBUTING.md`. In one line: one prompt per folder under `case-studies/`,
 ## License
 
 MIT â€” see `LICENSE`.
+
+## Contact
+
+Discord: `6heu`.
